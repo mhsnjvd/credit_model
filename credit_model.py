@@ -152,7 +152,7 @@ class CallOption(Option):
         sigma = self.get_volatility()
 
         sqrt_t = np.sqrt(t)
-        d1 = np.log(S * np.exp(r * t) / K ) / (sigma * sqrt_t) + .5 * sigma * sqrt_t
+        d1 = np.log(S * np.exp(r * t) / K) / (sigma * sqrt_t) + .5 * sigma * sqrt_t
         d2 = d1 - sigma * sqrt_t
         N = lambda x: norm.cdf(x)
 
@@ -160,7 +160,7 @@ class CallOption(Option):
 
 
 class PutOption(Option):
-    """Class for a call option
+    """Class for a put option
     """
     def __init__(self, S, K, sigma, r, T):
         Option.__init__(self, S, K, sigma, r, T, "put")
